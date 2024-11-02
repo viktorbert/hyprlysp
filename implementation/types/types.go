@@ -32,7 +32,9 @@ type HLKeyword struct {
 }
 
 
-type HLLiteral string
+type HLLiteral struct {
+	Value String
+}
 
 const (
 	HLNil   HLLiteral = "nil"
