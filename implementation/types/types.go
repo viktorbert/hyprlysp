@@ -46,6 +46,6 @@ type HLList []HLValue
 
 type HLVector []HLValue
 
-type HLTablemap[HLValue]HLValue
+type HLTable map[HLValue]HLValue
 
 type HLFunction func(args ...HLType) (HLType, error)
