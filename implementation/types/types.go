@@ -20,24 +20,22 @@ type HLByte struct {
 }
 
 type HLString struct {
-	Value String
+	Value string
 }
 
 type HLSymbol struct {
-	Value String
+	Value string
 }
 
 type HLKeyword struct {
-	Value String
+	Value string
 }
 
 
-type HLLiteral struct {
-	Value String
-}
+type HLLiteral string
 
 const (
-	HLNil   HLLiteral = "nil"
+	HLNil   HLLiteral = "Nil"
 	HLTrue  HLLiteral = "#t"
 	HLFalse HLLiteral = "#f"
 )
@@ -48,4 +46,4 @@ type HLVector []HLValue
 
 type HLTable map[HLValue]HLValue
 
-type HLFunction func(args ...HLType) (HLType, error)
+type HLFunction func(args ...HLValue) (HLValue, error)

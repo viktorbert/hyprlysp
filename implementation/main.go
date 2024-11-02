@@ -4,8 +4,8 @@ import (
     //std imports
     "fmt"
     //repo imports
-    //"github.com/viktorbert/hyprlysp/implementation/types"
-    //"github.com/viktorbert/hyprlysp/implementation/reader"
+    "github.com/viktorbert/hyprlysp/implementation/types"
+    "github.com/viktorbert/hyprlysp/implementation/reader"
 
 
     //other imports
@@ -38,13 +38,15 @@ func main() {
     }
     defer rl.Close()
 
-    fmt.Fprintln(rl,"Hello")
+    fmt.Fprintln(rl,"hyprlysp v0.0.1")
+
+    fmt.Fprintln(rl,types.HLSysInt{2})
 
     for {
         line, err := rl.Readline()
         if err != nil { // io.EOF
             break
         }
-        fmt.Fprintln(rl,(Tokenize(line)))
+        fmt.Fprintln(rl,(reader.Tokenize(line)))
     }
 }
