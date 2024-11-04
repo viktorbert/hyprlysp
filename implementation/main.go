@@ -3,6 +3,7 @@ package main
 import (
     //std imports
     "fmt"
+
     //repo imports
     "github.com/viktorbert/hyprlysp/implementation/types"
     "github.com/viktorbert/hyprlysp/implementation/reader"
@@ -11,22 +12,7 @@ import (
     //other imports
     "github.com/chzyer/readline"
 
-    // temp
-    //s "strings"
 )
-
-/*
-func Tokenize(i string) []string {
-	i = s.Replace(i,"(", " ( ",-1)
-	i = s.Replace(i,")", " ) ",-1)
-	i = s.Replace(i,"[", " [ ",-1)
-	i = s.Replace(i,"]", " ] ",-1)
-	i = s.Replace(i,"{", " { ",-1)
-	i = s.Replace(i,"}", " } ",-1)
-
-	return s.Split(i," ")
-}
-*/
 
 func main() {
 
@@ -47,6 +33,9 @@ func main() {
         if err != nil { // io.EOF
             break
         }
-        fmt.Fprintln(rl,(reader.Tokenize(line)))
+        tokens := reader.Tokenize(line)
+        fmt.Fprintln(rl,tokens)
+        parsed := reader.Parse(tokens)
+        fmt.Fprintln(rl,parsed)
     }
 }
